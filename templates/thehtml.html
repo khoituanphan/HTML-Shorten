@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shortten Url</title>
+    <link href="{{ url_for('static', path='/CDM.css') }}" rel="stylesheet">
+  </head>
+<body>
+
+
+<form class="box" action="thehtml.html" method="post">
+  <h1>Redirect home</h1>
+  <input type="shortlink" placeholder="shortlink" id="shortlink" value=""/><br>
+  <input type="shortlink" placeholder="shonglink" id="longlink" value=""/><br>
+  <input type="submit">
+</form>
+
+<p id="demo">{{result}}</p>
+
+
+</body>
+</html>

@@ -1,8 +1,11 @@
 from fastapi import FastAPI, Request, Form, Response
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from starlette.responses import PlainTextResponse, RedirectResponse
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 templates = Jinja2Templates(directory="templates/")
 
 import mysql.connector
