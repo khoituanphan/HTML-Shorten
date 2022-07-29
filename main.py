@@ -32,8 +32,11 @@ async def root(request: Request):
 
 @app.get("/redirect")
 async def form_post(request: Request):
-        result = "Type a short link and long link"
-        return templates.TemplateResponse('thehtml.html', context={'request': request, 'result': result})
+    sql = "SELECT * FROM customers"
+    mycursor.execute(sql)
+    links = mycursor.fetchall()
+    return templates.TemplateResponse('thehtml.html', context={'request': request, 'links': links})
+
 @app.post("/redirect")
 async def form_post(request: Request, shortlink: str = Form(...), longlink: str = Form(...)):
         print("run from post")
@@ -42,11 +45,10 @@ async def form_post(request: Request, shortlink: str = Form(...), longlink: str 
         mycursor.execute(sql, val)
         mydb.commit()
         result = "Linked successfully"
-        return templates.TemplateResponse('thehtml.html', context={'request': request, 'result': result})
+        return result
 
 @app.get("/redirect/{shortlink}")
 async def redirect(shortlink):
-    #dict = {"me": 'https://www.facebook.com/'}
     sql = "SELECT * FROM customers WHERE shortlink = %s"
     mycursor.execute(sql,(shortlink, ))
     myresult = mycursor.fetchone()
