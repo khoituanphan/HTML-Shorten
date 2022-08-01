@@ -19,7 +19,7 @@ body{
   text-transform: uppercase;
   font-weight: 500;
 }
-.box input[type = "shortlink"]{
+.box input[type = "text"]{
   border:0;
   background: none;
   display: block;
@@ -33,11 +33,11 @@ body{
   border-radius: 24px;
   transition: 0.25s;
 }
-.box input[type = "shortlink"]:focus{
+.box input[type = "text"]:focus{
   width: 280px;
   border-color: #2ecc71;
 }
-.box input[type = "submit"]{
+.box input[type = "buttom"]{
   border:0;
   background: none;
   display: block;
@@ -51,7 +51,7 @@ body{
   transition: 0.25s;
   cursor: pointer;
 }
-.box input[type = "submit"]:hover{
+.box input[type = "buttom"]:hover{
   background: #2ecc71;
 }
 p{
