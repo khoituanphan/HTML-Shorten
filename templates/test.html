@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <script type="text/javascript">
+    function submitForm() {
+        var formElement = document.getElementById('myForm');
+        var data = new FormData(formElement);
+        fetch('/redirect', {
+              method: 'POST',
+              body: data,
+            })
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById("responseArea").innerHTML = data;
+            })
+            .catch(error => {
+              console.error(error);
+            });
+    }
+ </script>
+  <head>
+    <meta charset="utf-8">
+    <title>َURL Shorten Link</title>
+    <link href="{{ url_for('static', path='/CDM.css') }}" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+  </head>
+
+<body>
+    <div class="wrapper">
+        <form action="#" autocomplete="off">
+          <input type="text" spellcheck="false" name="full_url" placeholder="Enter or paste a long url" required>
+          <i class="url-icon uil uil-link"></i>
+          <button>Shorten</button>
+        </form>
+
+<form method="post" id="myForm" class="box">
+  <h1>Redirect home</h1>
+  <input type="text" name="shortlink" id="shortlink" value=""/><br>
+  <input type="text" name="longlink" id="longlink" value=""/><br>
+  <input type="button" value="Start" onclick="submitForm()">
+</form>
+
+<p id="responseArea"></p>
+<p>
+  {% for link in links %}
+    <b>{{link[0]}}            </b>
+    <b>{{link[1]}}            </b><br>
+  {% endfor %}
+</p>
+
+</body>
+</html>
