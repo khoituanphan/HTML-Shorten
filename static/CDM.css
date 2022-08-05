@@ -90,20 +90,14 @@ form button:hover{
   color: #000;
 }
 
-.wrapper .statistics{
+.wrapper .count{
   margin: 20px 0;
   display: flex;
   padding-right: 5px;
   align-items: center;
   justify-content: space-between;
 }
-.statistics span{
-  font-size: 17px;
-}
-.statistics span span{
-  font-weight: 500;
-}
-.statistics a:hover{
+ .count a:hover{
   color: #20B2AA;
 }
 
@@ -134,9 +128,11 @@ form button:hover{
   text-align: center;
   background: #f2f2f2;
   padding: 10px 0;
+  text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;;
 }
 .urls-area .data li{
   padding: 8px 10px;
+  background: #0098f0;
   display: flex;
   align-items: center;
   justify-content: center;

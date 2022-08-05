@@ -25,13 +25,6 @@
   </head>
 
 <body>
-    <div class="wrapper">
-        <form action="#" autocomplete="off">
-          <input type="text" spellcheck="false" name="full_url" placeholder="Enter or paste a long url" required>
-          <i class="url-icon uil uil-link"></i>
-          <button>Shorten</button>
-        </form>
-
 <form method="post" id="myForm" class="box">
   <h1>Redirect home</h1>
   <input type="text" name="shortlink" id="shortlink" value=""/><br>
@@ -42,8 +35,8 @@
 <p id="responseArea"></p>
 <p>
   {% for link in links %}
-    <b>{{link[0]}}            </b>
-    <b>{{link[1]}}            </b><br>
+    <b>{{link[1]}}            </b>
+    <b>{{link[0]}}            </b><br>
   {% endfor %}
 </p>
 
