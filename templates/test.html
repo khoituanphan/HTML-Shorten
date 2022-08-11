@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>َURL Shorten Link</title>
+    <link rel="stylesheet" href="../static/CDM.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+  </head>
+
+<body>
+    <div class="wrapper">
+        <form method="post" id="myForm" autocomplete="off">
+          <input type="text" spellcheck="false" name="longlink" placeholder="Enter or paste a long url" id="longlink" required >
+          <input type="name" spellcheck="false" name="shortlink" placeholder="Enter or paste a shorten url" id="shortlink" required >
+          <!-- <i class="url-icon uil uil-link"></i> -->
+          <button>Shorten</button>
+        </form>
+    <div class="count">
+        <span>Total Links: <span> </span></span>
+        <a href="#">Clear All</a>
+    </div>
+    <div class="urls-area">
+    <div class="title">
+        <li>Shorten URL</li>
+        <li>Original URL</li>
+        <li>Action</li>
+    </div>
+    {% for link in links %}
+    <div class="data" id="responseArea">   
+        <li>{{link[0]}}</li>
+        <li>{{link[1]}}</li>
+        <li><a href="#">Delete</a></li>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
+    <div class="blur-effect"></div>
+    <div class="popup-box">
+      <div class="info-box"> Your shortlink is ready. Please enter your shorten link</div>
+      <form action="#">
+        <label> Edit your short link</label>
+        <input type="text" spellcheck="false" value="Test">
+        <i class="copy-icon uil uil-copy-alt"></i>
+        <button> Save </button>    
+          
+      <script src="../static/js/script.js"></script>
+      </form>
+    </div>
+    </div>
+
+
+</body>
+</html>
